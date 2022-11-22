@@ -68,7 +68,7 @@ function agregarStringInvertida() {
       this.edad     = edad;
       this.domicilio     = domicilio;
     }
-      detalle = function (){
+      detalle = function() {
       return {
         nombre: this.nombre,
         apellido: this.apellido,

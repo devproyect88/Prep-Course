@@ -81,12 +81,12 @@ function tienePropiedad (objeto, propiedad) {
   // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
+
   // Tu código:
-  let tienePropiedad;
-  if(objeto[propiedad] != undefined){
-    return true
-  };
-  return false;
+if (objeto[propiedad] !=undefined){
+  return true;
+}
+return false;
 }
 
 function verificarPassword (usuario, password) {
@@ -127,12 +127,21 @@ function pasarUsuarioAPremium (usuarios) {
 /* usuarios = [usario1={ esPremium = true }, usuario2= {esPremium = true }]
 
   usuarios: 
+
 }*/
+
+
+for (let i=0; i<usuarios.length; i++){
+  (usuarios[i][`esPremium`]=true)
+}
+return usuarios;
+}
+/*
 for (let i=0; i<usuarios.length; i++){
 usuarios[i].esPremium = true
 };
 return usuarios;
-}
+}*/
 
 function sumarLikesDeUsuario (usuario) {
   // "usuario" tiene una propiedad llamada "posts" que es un array
@@ -163,11 +172,13 @@ function agregarMetodoCalculoDescuento (producto) {
     producto.precio*porcentajeDeDescuento = precioConDescuento
   } }
   */
-  producto.calcularPrecioDescuento = function(){ 
-return this.precio - (this.precio * this.porcentajeDeDescuento);
- }
-return producto;
+producto.calcularPrecioDescuento = function () {
+  return this.precio - (this.precio*this.porcentajeDeDescuento);
 }
+return producto;  
+  }
+
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------
