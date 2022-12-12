@@ -1,18 +1,41 @@
-h1 {
-    color: red;
-}
-img {
-    width: 400px;
-}
-#thirdDiv {
-    height: 600px;
-    width: 500px;
-    background-color: palegreen;
-    padding: 50px;
-    border: 10px solid;
-}
-#spanId {
-    font-size: 18px;
-    margin: 50px;
+body {
+  background-image: url("https://img.freepik.com/foto-gratis/familia-despreocupada-divirtiendose-mientras-muda-nuevo-hogar_637285-12376.jpg?w=740&t=st=1670704807~exp=1670705407~hmac=8f8904786ef791ce4de3abad59b2e1a799f597cda70921d6308a6273306436e3");
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
+
+h1 {
+    color: green;
+    width: 400px;
+    font-size: 70px;
+}
+
+img {
+  
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 5px;
+}
+#thirdDiv {
+    height: 500px;
+    width: 600px;
+    background-color: palegreen;
+    padding: 50px;
+    border: 10px solid yellow;
+    
+}
+
+#spanId {
+    font-size: 18px;
+    color: white;
+   }
+
+
+
+
+
+
