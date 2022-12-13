@@ -1,14 +1,30 @@
 body {
-  background-image: url("https://img.freepik.com/foto-gratis/familia-despreocupada-divirtiendose-mientras-muda-nuevo-hogar_637285-12376.jpg?w=740&t=st=1670704807~exp=1670705407~hmac=8f8904786ef791ce4de3abad59b2e1a799f597cda70921d6308a6273306436e3");
+    background-image: url("https://img.freepik.com/foto-gratis/familia-despreocupada-divirtiendose-mientras-muda-nuevo-hogar_637285-12376.jpg?w=740&t=st=1670704807~exp=1670705407~hmac=8f8904786ef791ce4de3abad59b2e1a799f597cda70921d6308a6273306436e3");
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 
+
 h1 {
-    color: green;
+    color:black;
     width: 400px;
     font-size: 70px;
+    position: fixed;
+    right: 250px;
+    bottom: 0px;
+    
+}
+
+h3 {
+  margin: 10px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
 }
 
 img {
@@ -17,25 +33,39 @@ img {
   width: 200px;
   display: flex;
   align-items: center;
-  margin: auto;
-  margin-top: 5px;
+  justify-content: center;
+  margin: 20px;
 }
 #thirdDiv {
     height: 500px;
     width: 600px;
     background-color: palegreen;
-    padding: 50px;
-    border: 10px solid yellow;
-    
+    padding: 10px;
+    border: 20px solid yellow;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0px auto 
+
 }
 
 #spanId {
     font-size: 18px;
     color: white;
-   }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
 
-
-
+.divClass {
+  
+  background: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 
 
