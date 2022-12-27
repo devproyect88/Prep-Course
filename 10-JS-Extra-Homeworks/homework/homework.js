@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { arrayReplaceAt } = require("markdown-it/lib/common/utils");
+
 function deObjetoAmatriz(objeto){
   // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
   // un par clave-valor en forma de matriz.
@@ -10,7 +12,16 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  let nuevoArray = [];
+  for (propiedad in objeto){
+    nuevoArray.push([propiedad, objeto[propiedad]]);
+  }
+  return nuevoArray;
+
+// let nuevoArray2 = Object.entries(objeto);
+// return nuevoArray2; con metodo
 }
+
 
 
 function numberOfCharacters(string) {
@@ -18,16 +29,54 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  let acumulador = {};
+  for (let i = 0; i < string.length; i++) {
+    if (typeof(string) !== "string"){
+      console.warn(`Hola la cadena "${string}" que ingresaste no es una cadena de texto`);
+    }
+    if ((!string)){
+      console.error(`No estas ingresando una cadena de texto`)
+    }
+    let caracter = string[i];
+    if(caracter in acumulador){
+      acumulador[caracter]++;      
+    }
+    else{
+      acumulador[caracter] = 1;
+    }
+  }
+  return acumulador;
 }
 
 
-function capToFront(s) {
-  //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
-  //al principio de la palabra.
-  //Ejemplo: soyHENRY -> HENRYsoy
-  //Escribe tu código aquí
-}
+  function capToFront(s) {
+    // Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas al principio de la palabra.
+    // Ejemplo: soyHENRY -> HENRYsoy
+  
+    if (!s) {
+      console.warn(`Ingresa una cadena de texto`);
+      return; 
+    }
+   
+    if (typeof s !== "string") {
+      console.error(`El elemento ${s} que estás registrando no es una cadena de texto`);
+      return; 
+    }
+    let mayusculasInicial = "";
+    let minisculasFinal = "";
+    let referente = s.toUpperCase();
 
+    for (let i = 0; i < s.length; i++) {
+      if (referente[i] === s[i]) {
+        
+        mayusculasInicial = mayusculasInicial + referente[i];
+      } else {
+        minisculasFinal = minisculasFinal + s[i];
+      }
+    }
+    return `${mayusculasInicial}${minisculasFinal}`;
+  }
+  
 
 function asAmirror(str) {
   //La función recibe una frase. 
@@ -35,6 +84,17 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  if (!str){
+     return console.error(`Debes ingresar una cadena de texto`);
+  }
+  if (typeof(str) !=="string"){
+     return console.log(`el valor ${str} no es una cadena de texto, retifica e ingresalo nuevamente`);
+  }
+  let validador = str.split(" ");
+  let cadenaInversa = validador.map((elemento) => {
+    return elemento.split("").reverse().join("");
+  });
+  return cadenaInversa.join(" ");
 } 
 
 
@@ -43,6 +103,19 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  if (!numero){
+    `Debes ingresar un numero`;
+  }
+  if (typeof(numero) !== "number"){
+    return `El valor: ${numero} ingresado no es un numero`;
+  }
+  let validador = parseInt(numero.toString().split("").reverse().join(""));
+  if (numero === validador){
+    return `Es capicua`;
+  }
+  else {
+    return `No es capicua`;
+  }
 }
 
 
@@ -66,7 +139,11 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
-}
+
+    }
+  
+    
+  
 
 
 
