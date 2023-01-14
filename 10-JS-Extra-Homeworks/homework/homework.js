@@ -123,13 +123,28 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-}
+  if (!cadena){
+    return `Debes ingresar algun texto que quieres evaluar`
+  }
+  if (typeof(cadena)!=="string"){
+    return `los valores que estas ingresando no son texto`
+  }
+  let separador = cadena.split("");
+  let filtrado = separador.filter((elemento)=>{
+    return elemento!=="a" && elemento !== "b" && elemento !== "c"});
+  return filtrado.join(""); 
+  }
+  
 
-
-function sortArray(arr) {
+function sortArray(arr){
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  if (arr===undefined) return `Debes ingresar un array`;
+  if (typeof arr !== "object") return `El valor ingresado no es un array`;
+  
+  return arr.sort((a,b)=> a.length - b.length);
+
 }
 
 
@@ -138,9 +153,17 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí
+  if (arreglo1 === undefined) return `Debes ingresar un array de numeros`;
+  if (arreglo2 === undefined) return `Debes ingresar un array de numeros`;
+  if (typeof arreglo1 !== "object") return `Debes ingresar un array de numeros`;
+  if (typeof arreglo2 !== "object") return `Debes ingresar un array`;
 
-    }
+  let nuevoArreglo = arreglo1.filter((valor) => {
+    return arreglo2.includes(valor)});
+
+  return nuevoArreglo;
+  }
   
     
   
